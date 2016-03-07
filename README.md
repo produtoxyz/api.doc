@@ -1,6 +1,5 @@
-####API
+![ProdutoXYZ](https://github.com/produtoxyz/api/blob/master/produto-xyz.png)
 
-![ProdutoXYZ](https://github.com/produtoxyz/api/blob/master/produtoxyz.png)
 
 API colaborativa de pesquisa de produtos por códigos de barras.
 
