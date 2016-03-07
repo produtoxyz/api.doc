@@ -17,6 +17,8 @@ O objetivo principal do Produto XYZ é fornecer uma ampla base de dados de produ
 ######Consulta de um produto
 
 
+API URI `https://api.produto.xyz/`
+
 ```
 GET curl -k https://api.produto.xyz/7897312400184
 
