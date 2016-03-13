@@ -5,24 +5,13 @@ API colaborativa de pesquisa de produtos por códigos de barras.
 
 O objetivo principal do Produto XYZ é fornecer uma ampla base de dados de produtos e seus respectivos código de barras EAN. Hoje não existe nenhum centralizador deste tipo de dados, cada aplicativo tem sua base particular assim dificultando para desenvolvedores criar novos serviço que necessitem dos dados básicos de produtos.
 
-######Versão
-
-- v1 - Versão inicial [beta]
- - Pesquisa por código de barras.
- 
-
 ####Documentação
 
-
-
-######Consulta de um produto
-
-
-API URI `https://api.produto.xyz/`
+#### Get products
+`$ curl -XGET https://api.produto.xyz/{codebar}`
 
 ```
-GET curl -k https://api.produto.xyz/7897312400184
-
+$ curl -XGET https://api.produto.xyz/7897312400184
 Response:
 {
    Product: {
@@ -35,4 +24,33 @@ Response:
 }
 ```
 
+
+
+#### Add products
+```
+$ curl -XPOST https://api.produto.xyz/v1/products \
+       -H 'Content-Type: application/json' \
+       -d '{"": ""}'
+```
+#### Update products
+```
+$ curl -XPUT https://api.produto.xyz/v1/products/{id} \
+        -H 'Content-Type: application/json' \
+        -d '{"": "."}'
+```
+
+#### Delete products
+`$ curl -XDELETE https://api.produto.xyz/v1/products/{id}`
+
+
+-----------------
+#####Changelogs
+
+## v1 
+
+###1.0.0 [beta]
+  * teste.
+
+
 [em desenvolvimento]
+
