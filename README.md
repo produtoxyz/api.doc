@@ -1,56 +1,55 @@
 ![ProdutoXYZ](https://github.com/produtoxyz/api/blob/master/produto-xyz.png)
 
 
-API colaborativa de pesquisa de produtos por códigos de barras.
+API colaborativa de pesquisa de produtos por códigos de barras GTIN.
 
 O objetivo principal do Produto XYZ é fornecer uma ampla base de dados de produtos e seus respectivos código de barras EAN. Hoje não existe nenhum centralizador deste tipo de dados, cada aplicativo tem sua base particular assim dificultando para desenvolvedores criar novos serviço que necessitem dos dados básicos de produtos.
 
 ####Documentação
 
 #### Get products
-`$ curl -XGET https://api.produto.xyz/{codebar}`
+`$ curl -XGET https://api.produto.xyz/v1/gtin/{codebar}`
+
+
+Busca por GTIN
 
 ```
-$ curl -XGET https://api.produto.xyz/7897312400184
+$ curl --location --request GET 'https://produto.xyz/v1/gtin/7897312400184'
 Response:
 {
    Product: {
-      barcode: "7897312400184",
+      gtin: "7897312400184",
       name: "DETERGENTE ECONOMICO NEUTRO 500ML",
       category: "",
       manufacturer: "",
-      id: "9587e780-e495-11e5-9d5b-5da257427e93"
+      id: "9587e7802342424234"
    }
 }
 ```
 
+Busca por nome
 
-
-#### Add products
 ```
-$ curl -XPOST https://api.produto.xyz/v1/products \
-       -H 'Content-Type: application/json' \
-       -d '{"": ""}'
+curl --location --request GET 'http://produto.xyz/v1/gtin?q=sabao%20cra%20cra'
+Response:
+{
+   "paging": {
+       "total": 3,
+       "offset": 0,
+       "limit": 50,
+   },
+   {...},
+   {...},
+   {...}
+}
 ```
-#### Update products
-```
-$ curl -XPUT https://api.produto.xyz/v1/products/{id} \
-        -H 'Content-Type: application/json' \
-        -d '{"": "."}'
-```
-
-#### Delete products
-`$ curl -XDELETE https://api.produto.xyz/v1/products/{id}`
-
 
 -----------------
 #####Changelogs
 
 ## v1 
 
-###1.0.0 [beta]
-  * teste.
+###0.0.1 [alpha]
 
 
-[em desenvolvimento]
-
+"Milagres acontecem, retomando esta idéia com novas idéias e tecnologias...." 
